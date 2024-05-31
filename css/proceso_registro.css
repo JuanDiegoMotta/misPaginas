@@ -1,3 +1,9 @@
+.error_message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-family: var(--font-texto);
+}
 .register {
   background-color: var(--blanco_fondo);
   /* border: 1px solid black; */
@@ -86,7 +92,7 @@
         .input_block {
           width: fit-content;
           height: fit-content;
-          border: 1px solid red;
+          /* border: 1px solid red; */
           display: flex;
           flex-direction: column;
           gap: 8px;
@@ -114,14 +120,15 @@
             font-weight: 700;
           }
           .allergies{
-            border: 1px solid black;
+            /* border: 1px solid black; */
             max-width: 300px;
             display:flex;
             flex-wrap: wrap;
             justify-content: space-around;
             gap: 8px;
+
             .allergy_card{
-                border: 1px solid red;
+                /* border: 1px solid red; */
                 width: fit-content;
                 height: 32px;
                 border-radius: 5px;
@@ -134,7 +141,7 @@
                 padding-right: 8px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 cursor: pointer;
-
+                user-select: none;
 
                 .allergy_checkbox{
                     display: none;
@@ -176,6 +183,46 @@
             }
 
         }
+        .radio_goal{
+          display: flex;
+          p{
+              font-family: var(--font-texto);
+              color: var(--azul_ppal);
+              font-weight: 700;
+              margin-bottom: 10px;
+              /* border: 1px solid black; */
+          }
+          .wrapper_goals{
+            display: flex;
+
+            label{
+                display: inline;
+                font-weight: 400;
+                margin-right: 8px;
+            }
+            input[type="radio"]{
+                width: fit-content;
+                height: fit-content;
+            }
+            .goal_card{
+              padding-left: 8px;
+              padding-right: 8px;
+              /* border: 1px solid red; */
+              background-color: white;
+              height: 32px;
+              width: 150px;
+              border-radius: 5px;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              cursor: pointer;
+              user-select: none;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  
+            }
+          }
+        }
         .select{
             #diet_select{
                 width: 184px;
@@ -207,11 +254,16 @@
           align-items: center;
           padding-left: 8px;
           border-radius: 10px;
+          cursor: pointer;
 
           p {
             font-family: var(--font-texto);
             color: var(--blanco_ppal);
           }
+        }
+        .next_button:hover{
+          background-color: #3a4d66;
+
         }
         .skip_button {
           width: 72px;
@@ -222,6 +274,7 @@
           padding-left: 8px;
           border-radius: 10px;
           position: absolute;
+          cursor: pointer;
           left: 10px;
           bottom: 10px;
 
@@ -230,6 +283,86 @@
             font-weight: 700;
             color: var(--azul_ppal);
           }
+        }
+      }
+    }
+
+    .form_calories{
+      flex-direction: column;
+      /* border: 1px solid red; */
+
+      .form_sections{
+        width: 100%;
+        height: 100%;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .form_section{
+          width: 45%;
+          height: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          .section_title{
+            font-family: var(--font-texto);
+            font-weight: 700;
+            color: var(--azul_ppal);
+            margin-bottom: 8px;
+            /* border: 1px solid red; */
+            width: fit-content;
+          }
+          .input_block{
+            label{
+              font-weight: 500;
+            }
+          }
+          .activity{
+            #activity{
+              width: 184px;
+              height: 28px;
+              border: 1px solid grey;
+              background-color: var(--blanco_fondo);
+              font-family: var(--font-texto);
+              border-radius: 8px;
+            }
+          }
+          #calculate_button{
+            margin-top: 24px;
+            width: 64px;
+            height: 24px;
+            background-color: var(--blanco_fondo);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid grey;
+            border-radius: 10px;
+            cursor: pointer;
+  
+            p {
+              font-family: var(--font-texto);
+              color: var(--azul_ppal);
+            }
+          }
+          #calculate_button:hover{
+            background-color: var(--azul_ppal);
+            p{
+              color: white;
+            }
+          }
+  
+        }
+        .vertical-line {
+          width: 2px; /* Ancho de la línea */
+          height: 50%; /* Altura de la línea, ajustable */
+          background-color: white; /* Color de la línea */
+        }
+        .estimated_calories{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 24px;
         }
       }
     }
@@ -274,7 +407,7 @@
       .form_container {
         /* border: 1px solid black; */
         height: 90%;
-        width: fit-content;
+        width: 90%;
         form {
           .form_section {
             flex-direction: column;
@@ -286,6 +419,35 @@
           }
         }
       }
+      .form_container{
+        .form_calories{
+          .form_sections{
+            flex-direction: column;
+  
+            .form_section{
+              width: 100%;
+            }
+            
+            .vertical-line{
+              display: none;
+            }
+          }
+        }
+
+        .form_section{
+          .radio_goal{
+            height: 80%;
+            
+            .wrapper_goals{
+              height: 100%;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+            }
+          }
+        }
+        
+      }
     }
   }
 }
@@ -296,6 +458,16 @@
     .register {
       width: 90%;
       height: 65%;
+      .form_container{
+        .form_section{
+          .radio_goal{
+            .wrapper_goals{
+              flex-wrap: wrap;
+            }
+          }
+        }
+      }
+
     }
   }
 }
