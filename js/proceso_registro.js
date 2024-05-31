@@ -544,39 +544,6 @@ function navigateToNextForm(formId) {
         const nextForm = document.getElementById(nextFormId);
         if (nextForm) {
             nextForm.classList.add('visible');
-            changeProgressBar(nextForm);
         }
-    }
-}
-function changeProgressBar(form){
-    let last_icon;
-    let last_text;
-    let icon;
-    let text;
-    switch(form){
-        case 'profile_form':
-            icon = document.querySelector('#icon_account');
-            text = document.querySelector('#icon_account_text');
-            icon = document.querySelector('#icon_profile');
-            text = document.querySelector('#icon_profile_text');
-            break;
-        case 'diet_form':
-            last_icon = document.querySelector('#icon_profile');
-            last_text = document.querySelector('#icon_profile_text');
-            icon = document.querySelector('#icon_diet');
-            text = document.querySelector('#icon_diet_text');
-            break;
-        case 'calories_form':
-            last_icon = document.querySelector('#icon_diet');
-            last_text = document.querySelector('#icon_diet_text');
-            icon = document.querySelector('#icon_calories');
-            text = document.querySelector('#icon_calories_text');
-            break;
-    }
-    if(icon && text && last_icon && last_text){
-        last_icon.classList.remove("current_icon");
-        last_text.clasList.remove("current_text");
-        icon.classList.add("current_icon");
-        text.classList.add("current_text");
     }
 }
